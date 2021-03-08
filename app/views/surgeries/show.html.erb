@@ -1,1 +1,16 @@
-<p><%= @surgery.title %> surgery is on <%= @surgery.day_of_week %> and is in operating room <%= @surgery.operating_room_number %></p>
+<h2><%= @surgery.title %> surgery is on <%= @surgery.day_of_week %> and is in operating room <%= @surgery.operating_room_number %></h2>
+
+<h3> Doctors in surgery </h3>
+<% @all_doctors.each do |doctor| %>
+<li> Dr. <%= doctor.name %>, <%= doctor.years_practiced %> years of experience</li>
+<% end %>
+
+<h3> Most experienced doctors </h3>
+<% @experienced_docs.each do |doctor| %>
+<li> Dr. <%= doctor.name %>, <%= doctor.years_practiced %> years of experience</li>
+<% end %>
+
+<h3> Least experienced doctors </h3>
+<% @inexperienced_docs.each do |doctor| %>
+<li> Dr. <%= doctor.name %>, <%= doctor.years_practiced %> years of experience</li>
+<% end %>

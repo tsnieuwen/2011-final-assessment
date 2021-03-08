@@ -30,5 +30,15 @@ RSpec.describe "As a visitor" do
 
 			expect(page).to have_content("#{@surgery1.title} surgery is on #{@surgery1.day_of_week} and is in operating room #{@surgery1.operating_room_number}")
 		end
+
+		it "renders the doctor's that will be performing the surgery along with their experience" do
+			visit surgery_path(@surgery1)
+
+			expect(page).to have_content("Dr. #{@doctor1.name}, #{@doctor1.years_practiced} years of experience")
+			expect(page).to have_content("Dr. #{@doctor2.name}, #{@doctor2.years_practiced} years of experience")
+			expect(page).to have_content("Dr. #{@doctor3.name}, #{@doctor3.years_practiced} years of experience")
+			expect(page).to have_content("Dr. #{@doctor4.name}, #{@doctor4.years_practiced} years of experience")
+			expect(page).to have_content("Dr. #{@doctor5.name}, #{@doctor5.years_practiced} years of experience")
+		end
 	end
 end

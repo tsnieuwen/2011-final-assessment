@@ -40,5 +40,21 @@ RSpec.describe "As a visitor" do
 			expect(page).to have_content("Dr. #{@doctor4.name}, #{@doctor4.years_practiced} years of experience")
 			expect(page).to have_content("Dr. #{@doctor5.name}, #{@doctor5.years_practiced} years of experience")
 		end
+
+		it "renders a form to add a doctor to the surgery" do
+			visit surgery_path(@surgery1)
+
+			expect(page).to have_content("Add doctor to surgery")
+			expect(page).to have_button("Submit")
+		end
+
+		it "returns me to the surgery show page, with the doctor I added listed, after I fill out the form and click submit" do
+			visit surgery_path(@surgery2)
+
+			fill_in :name, with: "#{@doctor3.name}"
+			click_button("Submit")
+			expect(current_path).to eq(surgery_path(@surgery2))
+			expect(page).to have_content("Dr. #{@doctor3.name}, #{@doctor3.years_practiced} years of experience")
+		end
 	end
 end

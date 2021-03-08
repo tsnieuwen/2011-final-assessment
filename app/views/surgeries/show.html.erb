@@ -14,3 +14,11 @@
 <% @inexperienced_docs.each do |doctor| %>
 <li> Dr. <%= doctor.name %>, <%= doctor.years_practiced %> years of experience</li>
 <% end %>
+
+<h3> Add doctor to surgery </h3>
+<%= form_with url: doctor_surgeries_path, method: :post, local: true do |form| %>
+  <%= form.label(:name, 'Doctor name:') %>
+  <%= form.text_field :name , required: true%><br>
+  <%= form.hidden_field(:surgery_id, value: @surgery.id)%><br>
+  <%= form.submit('Submit') %>
+<% end %>

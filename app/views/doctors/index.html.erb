@@ -1,0 +1,4 @@
+<h3> Doctor Index Page </h3>
+<% @doctors.each do |doctor| %>
+<li> Dr. <%= doctor.name %> has <%= doctor.years_practiced %> years of experience, and studied at <%= doctor.university %></li>
+<% end  %>

@@ -28,30 +28,24 @@ RSpec.describe "As a visitor" do
 		it "renders every doctor's name, years practiced, and university" do
 			visit doctors_path
 
-			expect(page).to have_content(@doctor1.name)
-			expect(page).to have_content(@doctor1.years_practiced)
-			expect(page).to have_content(@doctor1.university)
-			expect(page).to have_content(@doctor2.name)
-			expect(page).to have_content(@doctor2.years_practiced)
-			expect(page).to have_content(@doctor2.university)
-			expect(page).to have_content(@doctor3.name)
-			expect(page).to have_content(@doctor3.years_practiced)
-			expect(page).to have_content(@doctor3.university)
-			expect(page).to have_content(@doctor4.name)
-			expect(page).to have_content(@doctor4.years_practiced)
-			expect(page).to have_content(@doctor4.university)
-			expect(page).to have_content(@doctor5.name)
-			expect(page).to have_content(@doctor5.years_practiced)
-			expect(page).to have_content(@doctor5.university)
-			expect(page).to have_content(@doctor6.name)
-			expect(page).to have_content(@doctor6.years_practiced)
-			expect(page).to have_content(@doctor6.university)
-			expect(page).to have_content(@doctor1.name)
-			expect(page).to have_content(@doctor1.years_practiced)
-			expect(page).to have_content(@doctor1.university)
+			expect(page).to have_content("Dr. #{@doctor1.name} has #{@doctor1.years_practiced} years of experience, and studied at #{@doctor1.university}")
+			expect(page).to have_content("Dr. #{@doctor2.name} has #{@doctor2.years_practiced} years of experience, and studied at #{@doctor2.university}")
+			expect(page).to have_content("Dr. #{@doctor3.name} has #{@doctor3.years_practiced} years of experience, and studied at #{@doctor3.university}")
+			expect(page).to have_content("Dr. #{@doctor4.name} has #{@doctor4.years_practiced} years of experience, and studied at #{@doctor4.university}")
+			expect(page).to have_content("Dr. #{@doctor5.name} has #{@doctor5.years_practiced} years of experience, and studied at #{@doctor5.university}")
+			expect(page).to have_content("Dr. #{@doctor6.name} has #{@doctor6.years_practiced} years of experience, and studied at #{@doctor6.university}")
+			expect(page).to have_content("Dr. #{@doctor7.name} has #{@doctor7.years_practiced} years of experience, and studied at #{@doctor7.university}")
 		end
 
-		# it "sorts the doctors in order by years practiced from most to least" do
-		# end
+	# 	it "sorts the doctors in order by years practiced from most to least" do
+	# 		visit doctors_path
+	#
+	# 		expect("Dr. #{@doctor3.name} has #{@doctor3.years_practiced} of experience, and studied at #{@doctor3.university}").to appear_before("Dr. #{@doctor4.name} has #{@doctor4.years_practiced} years of experience, and studied at #{@doctor4.university}")
+	# 		expect("Dr. #{@doctor4.name} has #{@doctor4.years_practiced} years of experience, and studied at #{@doctor4.university}").to appear_before("Dr. #{@doctor6.name} has #{@doctor6.years_practiced} years of experience, and studied at #{@doctor6.university}")
+	# 		expect("Dr. #{@doctor6.name} has #{@doctor6.years_practiced} of experience, and studied at #{@doctor6.university}").to appear_before("Dr. #{@doctor1.name} has #{@doctor1.years_practiced} years of experience, and studied at #{@doctor1.university}")
+	# 		expect("Dr. #{@doctor1.name} has #{@doctor1.years_practiced} years of experience, and studied at #{@doctor1.university}").to appear_before("Dr. #{@doctor5.name} has #{@doctor5.years_practiced} years of experience, and studied at #{@doctor5.university}")
+	# 		expect("Dr. #{@doctor5.name} has #{@doctor5.years_practiced} of experience, and studied at #{@doctor5.university}").to appear_before("Dr. #{@doctor7.name} has #{@doctor7.years_practiced} years of experience, and studied at #{@doctor7.university}")
+	# 		expect("Dr. #{@doctor7.name} has #{@doctor7.years_practiced} years of experience, and studied at #{@doctor7.university}").to appear_before("Dr. #{@doctor2.name} has #{@doctor2.years_practiced} years of experience, and studied at #{@doctor2.university}")
+	# 	end
 	end
 end

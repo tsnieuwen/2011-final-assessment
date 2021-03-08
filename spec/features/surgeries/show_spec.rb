@@ -40,15 +40,15 @@ RSpec.describe "As a visitor" do
 			expect(page).to have_content("Dr. #{@doctor4.name}, #{@doctor4.years_practiced} years of experience")
 			expect(page).to have_content("Dr. #{@doctor5.name}, #{@doctor5.years_practiced} years of experience")
 
-			# within("#Most experienced") do
-			# 	expect(page).to have_content("Dr. #{@doctor3.name}, #{@doctor3.years_practiced} years of experience")
-			# 	expect(page).to have_content("Dr. #{@doctor4.name}, #{@doctor4.years_practiced} years of experience")
-			# end
-			#
-			# within("#Least experienced") do
-			# 	expect(page).to have_content("Dr. #{@doctor2.name}, #{@doctor2.years_practiced} years of experience")
-			# 	expect(page).to have_content("Dr. #{@doctor5.name}, #{@doctor5.years_practiced} years of experience")
-			# end
+			within("#most_experienced-") do
+				expect(page).to have_content("Dr. #{@doctor3.name}, #{@doctor3.years_practiced} years of experience")
+				expect(page).to have_content("Dr. #{@doctor4.name}, #{@doctor4.years_practiced} years of experience")
+			end
+
+			within("#least_experienced-") do
+				expect(page).to have_content("Dr. #{@doctor2.name}, #{@doctor2.years_practiced} years of experience")
+				expect(page).to have_content("Dr. #{@doctor5.name}, #{@doctor5.years_practiced} years of experience")
+			end
 
 		end
 

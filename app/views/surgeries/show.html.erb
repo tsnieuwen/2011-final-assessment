@@ -6,14 +6,14 @@
 <% end %>
 
 <h3> Most experienced doctors </h3>
-<section id="Most experienced">
+<section id="most_experienced-">
 <% @experienced_docs.each do |doctor| %>
 <li> Dr. <%= doctor.name %>, <%= doctor.years_practiced %> years of experience</li>
 <% end %>
 </section>
 
 <h3> Least experienced doctors </h3>
-<section id="Least experienced">
+<section id="least_experienced-">
 <% @inexperienced_docs.each do |doctor| %>
 <li> Dr. <%= doctor.name %>, <%= doctor.years_practiced %> years of experience</li>
 <% end %>

@@ -6,14 +6,18 @@
 <% end %>
 
 <h3> Most experienced doctors </h3>
+<section id="Most experienced">
 <% @experienced_docs.each do |doctor| %>
 <li> Dr. <%= doctor.name %>, <%= doctor.years_practiced %> years of experience</li>
 <% end %>
+</section>
 
 <h3> Least experienced doctors </h3>
+<section id="Least experienced">
 <% @inexperienced_docs.each do |doctor| %>
 <li> Dr. <%= doctor.name %>, <%= doctor.years_practiced %> years of experience</li>
 <% end %>
+</section>
 
 <h3> Add doctor to surgery </h3>
 <%= form_with url: doctor_surgeries_path, method: :post, local: true do |form| %>
